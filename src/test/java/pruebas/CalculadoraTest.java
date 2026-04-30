@@ -14,7 +14,15 @@ public class CalculadoraTest {
         double b = 2;
         double total = a + b;
         double suma = calculadora.suma(a,b);
-        assertEquals(suma,total);
+        assertEquals(total,suma);
     }
-
+    @Test
+    public void testResta() {
+        Calculadora calculadora = new Calculadora();
+        double a = 4;
+        double b = 2;
+        double resta = a - b;
+        double total = calculadora.resta(a,b);
+        assertEquals(total,resta);
+    }
 }
