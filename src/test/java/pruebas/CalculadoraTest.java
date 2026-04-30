@@ -25,4 +25,13 @@ public class CalculadoraTest {
         double total = calculadora.resta(a,b);
         assertEquals(total,resta);
     }
+    @Test
+    public void testMultiplicacion() {
+        Calculadora calculadora = new Calculadora();
+        double a = 2;
+        double b = 3;
+        double total = calculadora.multiplicacion(a,b);
+        double multiplicacion = a * b;
+        assertEquals(total,multiplicacion);
+    }
 }
