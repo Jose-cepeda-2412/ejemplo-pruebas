@@ -12,9 +12,9 @@ public class CalculadoraTest {
         Calculadora calculadora = new Calculadora();
         double a = 4;
         double b = 2;
-        double total = a + b;
+        double esperado = a + b;
         double suma = calculadora.suma(a,b);
-        assertEquals(total,suma);
+        assertEquals(esperado,suma);
     }
     @Test
     public void testResta() {
@@ -22,16 +22,40 @@ public class CalculadoraTest {
         double a = 4;
         double b = 2;
         double resta = a - b;
-        double total = calculadora.resta(a,b);
-        assertEquals(total,resta);
+        double esperado = calculadora.resta(a,b);
+        assertEquals(esperado,resta);
     }
     @Test
     public void testMultiplicacion() {
         Calculadora calculadora = new Calculadora();
         double a = 2;
         double b = 3;
-        double total = calculadora.multiplicacion(a,b);
+        double esperado = calculadora.multiplicacion(a,b);
         double multiplicacion = a * b;
-        assertEquals(total,multiplicacion);
+        assertEquals(esperado,multiplicacion);
     }
+    @Test
+    public void testDivision(){
+        Calculadora calculadora = new Calculadora();
+
+        double a = 4;
+        double b = 2;
+
+        double esperado = 2;
+        double resultado = calculadora.division(a, b);
+
+        assertEquals(esperado, resultado);
+    }
+
+    @Test
+    public void testDivisionPorCero() {
+        Calculadora calculadora = new Calculadora();
+
+        assertThrows(ArithmeticException.class, () -> {
+            calculadora.division(4, 0);
+        });
+    }
+
+
+
 }
